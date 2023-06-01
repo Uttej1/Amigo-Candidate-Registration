@@ -1,0 +1,313 @@
+/* Google font import - poppins*/
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins' sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: lightblue;
+}
+
+.container{
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 30px;
+    margin: 0 15px;
+    background: white;
+    box-shadow: 0 5px 10px rba(0,0,0,0.1);
+}
+
+.container ::-webkit-scrollbar{
+    display: none;
+}
+.container{
+    -ms-overflow-style: hidden;
+}
+.container header{
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.container header::before{
+    content:"";
+    position: absolute;
+    height: -2px;
+    width: 27px;
+    left: 0;
+    border-radius: 8px;
+    background-color: #4070f4;
+}
+
+.container form{
+    position: relative;
+    margin-top: 16px;
+    min-height: 490px;
+    background-color: white;
+    overflow-y: scroll;
+}
+
+.container form .form{
+    position: absolute;
+    background-color: #fff;
+    transition: 0.3s ease;
+}
+
+.container form .form.second{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100%);
+}
+
+.container form .form.third{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100%);
+}
+
+.container form .form.fourth{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100%);
+}
+
+.container form .form.fifth{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100%);
+}
+
+.container form .form.sixth{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100%);
+}
+
+form.SecActive .form.second{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+
+form.SecActive .form.first{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+}
+
+form.SecActive1 .form.third{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+
+form.SecActive1 .form.second{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+}
+
+form.SecActive2 .form.fourth{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+
+form.SecActive2 .form.third{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+}
+
+form.SecActive3 .form.fifth{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+
+form.SecActive3 .form.fourth{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+}
+
+form.SecActive4 .form.sixth{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+
+form.SecActive4 .form.fifth{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+}
+
+.container form .title{
+    display: block;
+    margin-bottom: 8px 0;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 6px 0;
+    color: #333;
+}
+
+.container form .fields{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+form .fields .input-field{
+    display: flex;
+    flex-direction: column;
+    margin: 4px 0;
+    width: calc(100% / 3 - 15px);
+}
+
+.input-field label,.fields label,.family-table label,.edu-table label,
+.course-table label,.exp-table label{
+    font-size: 12px;
+    font-weight: 500;
+    color: #2e2e5e;
+}
+
+.input-field input,.fields input{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    width: 100%;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+}
+.family-table input,.family-table select,
+.course-table input,.course-table select,
+.edu-table input,.edu-table select,.exp-table input{
+    outline: none;
+    font-size: 14px;
+    width: 100%;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+}
+
+.input-field select{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+}
+
+.input-field input:is(:focus, :valid){
+    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+}
+
+.input-field input[type="date"]{
+    color: #707070;
+}
+
+.input-field input[type="date"]:valid{
+    color: #333;
+}
+
+.container .addRow,.createFamilyTable,.createEduTable,.createCourseTable,
+.createExpTable{
+    margin-bottom: 14px;
+    margin-top: 14px;
+}
+
+.container form button,.backBtn,.backBtn1,.backBtn2,.createFamilyTable,.createEduTable,
+.createCourseTable,.createExpTable,.backBtn3,.backBtn4{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 200px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 5px;
+    background-color: #4070f4;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+
+.container form button,.container form .backBtn2,
+.container form .backBtn3,.backBtn4,
+.container form .backBtn,.container form .backBtn1{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+form button:hover{
+    background-color: #265df2;
+}
+
+form button i,form .backBtn2 i,form .backBtn3 i,form .backBtn4 i,
+form .backBtn i,form .backBtn1 i{
+    margin: 0 6px;
+}
+
+form .backBtn i,form .backBtn1 i,form .backBtn2 i,form .backBtn3 i,
+form .backBtn4 i{
+    transform: rotate(180deg);
+}
+
+form .buttons{
+    display: flex;
+    align-items: center;
+}
+
+form .buttons button,.backBtn,.backBtn1,.backBtn2,.backBtn3,.backBtn4{
+    margin-right: 14px;
+}
+
+@media (max-width: 750px){
+    .container form{
+        overflow-y: scroll;
+    }
+    .container form::-webkit-scrollbar{
+        display: none;
+    }
+    form .fields .input-field{
+        width: calc(100% / 2 - 15px);
+    }
+}
+
+@media (max-width: 550px){
+    form .fields .input-field{
+        width: 100%
+    }
+}
+
+.form canvas{
+    border: 2px solid black;
+    width: 350px;
+    height: 100px;
+}
