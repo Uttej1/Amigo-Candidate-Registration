@@ -1,1 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Candidate Registration</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>Registration</header>
+    <form id="registrationForm" method="POST" action="{{ url_for('register') }}">
+        <div class="form first">
+            <div class="details personal">
+                <span class="title">Personal Details</span>
+                <div class="fields">
+                    <div class="input-field">
+                        <label>Full Name<span style="color:red;font-size: smaller;">*</span></label>
+                        <input type="text" placeholder="Enter Your Full Name" id="name">
+                    </div>
+
+                    <div class="input-field">
+                        <label>Father Name<span style="color:red;font-size: smaller;">*</span></label>
+                        <input type="text" placeholder="Enter Your Father Name" id="father_name">
+                    </div>
+
+                    <div class="input-field">
+                        <label>Date Of Birth<span style="color:red;font-size: smaller;">*</span></label>
+                        <input type="date" placeholder="Enter Your Birth Date" id="dob" >
+                    </div>
+
+                    <div class="input-field">
+                        <label>Mobile Number<span style="color:red;font-size: smaller;">*</span></label>
+                        <input type="number" placeholder="Enter Mobile Number" minlength="10" id="phone">
+                    </div>
+
+                    <div class="input-field">
+                        <label>Gender<span style="color:red;font-size: smaller;">*</span></label>
+                        <select id="gender">
+                            <option value=""disabled selected hidden>Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-field">
+                        <label>Email<span style="color:red;font-size: smaller;">*</span></label>
+                        <input type="email" placeholder="Enter email" id="email">
+                    </div>
+
+                    <div class="input-field">
+                        <label>Post Applied<span style="color:red;font-size: smaller;">*</span></label>
+                        <input type="text" placeholder="Enter post applied" >
+                    </div>
+
+                    <div class="input-field">
+                        <label>Blood Group<span style="color:red;font-size: smaller;">*</span></label>
+                        <select >
+                            <option value=""disabled selected hidden>Select Blood Group</option>
+                            <option value="A Positive">A Positive</option>
+                            <option value="A Negitive">A Negitive</option>
+                            <option value="B Positive">B Positive</option>
+                            <option value="B Negitive">B Negitive</option>
+                            <option value="AB Positive">AB Positive</option>
+                            <option value="AB Negitive">AB Negitive</option>
+                            <option value="O Positive">O Positive</option>
+                            <option value="O Positive">O Negitive</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div>
+
+                    <div class="input-field">
+                        <label>Marital Status<span style="color:red;font-size: smaller;">*</span></label>
+                        <select >
+                            <option value=""disabled selected hidden>Select Option</option>
+                            <option value="Single">Single</option>
+                            <option value="Married">Married</option>
+                            <option value="divorced">Divorced</option>
+                        </select>
+                    </div>
+
+                    <div class="input-field">
+                        <label>Aadhar Number<span style="color:red;font-size: smaller;">*</span></label>
+                        <input type="number" placeholder="Enter Your Aadhar Number"  minlength="12">
+                    </div>
+
+                    <div class="input-field">
+                        <label>Address<span style="color:red;font-size: smaller;">*</span></label>
+                        <input type="text" placeholder="Enter Your Address" >
+                    </div>
+
+                    <div class="input-field">
+                        <label>City<span style="color:red;font-size: smaller;">*</span></label>
+                        <input type="text" placeholder="Enter Your City" >
+                    </div>
+
+                    <div class="input-field">
+                        <label>State<span style="color:red;font-size: smaller;">*</span></label>
+                        <input type="text" placeholder="Enter Your State" >
+                    </div>
+
+                    <div class="input-field">
+                        <label>District<span style="color:red;font-size: smaller;">*</span></label>
+                        <input type="text" placeholder="Enter Your District" >
+                    </div>
+
+                    <div class="input-field">
+                        <label>Pincode<span style="color:red;font-size: smaller;">*</span></label>
+                        <input type="number" placeholder="Enter Your Pincode" minlength="6" >
+                    </div>
+
+                </div>
+                <button class="nextBtn">
+                    <span class="btnText">Next</span>
+                    <i class="uil uil-navigator"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="form second">
+            <div class="details family">
+                <span class="title">Family Details</span>
+                <div class="fields">
+                    <label>Number of Family Members<span style="color:red;font-size: smaller;">*</span></label>
+                    <input type="number" id="family-rows" placeholder="Example: 5" >
+                    
+                </div>
+                <button class="createFamilyTable" onclick="createFamTable()">Add Details</button>
+                <div class="buttons">
+                    <div class="backBtn">
+                        <i class="uil uil-navigator"></i>
+                        <span class="btnText">Back</span>
+                    </div>
+                    <button class="nextBtn1">
+                        <span class="btnText">Next</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <div class="form third">
+            <div class="details education">
+                <span class="title">Education Details</span>
+                <div class="fields">
+                    <label>Number of Qualification Certificates<span style="color:red;font-size: smaller;">*</span></label>
+                    <input type="number" id="edu-rows" placeholder="Example: 5" minlength="3">
+                </div>
+                <button class="createEduTable" onclick="createEduTable()">Add Details</button>
+                <div class="buttons">
+                    <div class="backBtn1">
+                        <i class="uil uil-navigator"></i>
+                        <span class="btnText">Back</span>
+                    </div>
+                    <button class="nextBtn2">
+                        <span class="btnText">Next</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form fourth">
+            <div class="details courses">
+                <span class="title">Professional Course Details</span><br/>
+                <label style="color:red;font-size: small;">If no professional courses attended enter 0</label>
+                <div class="fields">
+                    <label>Number of Professional courses completed</label>
+                    <input type="number" id="course-rows" placeholder="Example: 5">
+                </div>
+                <button class="createCourseTable" onclick="createCourseTable()">Add Details</button>
+                <div class="buttons">
+                    <div class="backBtn2">
+                        <i class="uil uil-navigator"></i>
+                        <span class="btnText">Back</span>
+                    </div>
+                    <button class="nextBtn3">
+                        <span class="btnText">Next</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form fifth">
+            <div class="details experience">
+                <span class="title">experience Details</span><br/>
+                <label style="color:red;font-size: small;">If no experience enter 0</label>
+                <div class="fields">
+                    <label>Number of companies worked in:</label>
+                    <input type="number" id="exp-rows" placeholder="Example: 5">
+                </div>
+                <button class="createExpTable" onclick="createExpTable()">Add Details</button>
+                <div class="buttons">
+                    <div class="backBtn3">
+                        <i class="uil uil-navigator"></i>
+                        <span class="btnText">Back</span>
+                    </div>
+                    <button class="nextBtn4">
+                        <span class="btnText">Next</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form sixth">
+            <div class="details others">
+                <span class="title">Other Details</span><br/>
+                <div>
+                    <label for="option1" style="color: #333;">Full Time</label>
+                    <input type="radio" id="option1" name="job_type">&nbsp;
+                    <label for="option2" style="color: #333;">Part Time</label>
+                    <input type="radio" id="option2" name="job_type">
+
+                </div><br/>
+                <div class="input-field">
+                    <label style="font-size: medium;">Why should we hire you? <span style="color:red;font-size: smaller;">*</span></label>
+                    <input type="text" placeholder="Enter Your Answer" >
+                </div>
+
+                <div class="input-field">
+                    <label style="font-size: medium;">Achievements<span style="color:red;font-size: smaller;">*</span></label>
+                    <input type="text" placeholder="Enter Your Achievements" >
+                </div>
+
+                <div class="input-field">
+                    <label style="font-size: medium;">Goals<span style="color:red;font-size: smaller;">*</span></label>
+                    <input type="number" placeholder="Enter your Goals">
+                </div>
+
+                <div class="input-field">
+                    <label style="font-size: medium;">Strengths<span style="color:red;font-size: smaller;">*</span></label>
+                    <input type="number" placeholder="Enter your Strengths">
+                </div>
+
+                <div class="input-field">
+                    <label style="font-size: medium;">Weaknesses<span style="color:red;font-size: smaller;">*</span></label>
+                    <input type="number" placeholder="Enter your Weaknesses">
+                </div>
+
+                <div class="input-field">
+                    <label style="font-size: medium;">Why do you Wish to leave your existing employment?<span style="color:red;font-size: smaller;">*</span></label>
+                    <input type="number" placeholder="Enter your Answer">
+                </div>
+
+                <div class="input-field">
+                    <label style="font-size: medium;">How did you come to know about our Organization?<span style="color:red;font-size: smaller;">*</span></label>
+                    <input type="number" placeholder="Enter your Answer">
+                </div>
+
+                <div class="input-field">
+                    <label style="font-size: medium;">How soon can you join, if you are selected?<span style="color:red;font-size: smaller;">*</span></label>
+                    <input type="number" placeholder="Enter your Answer">
+                </div>
+                <br/>
+                
+                <div class="check">
+                    <input type="checkbox"  />
+                    <label class="terms">I certify that above information is correct & complete to the best of my knowledge and nothing has been concealed
+                         should I be found to have concealed any material information or given any details, my appointments shall be liable to be summarily
+                          terminated without notice or compensation.</label><br/>
+                </div><br/>
+            
+                <div class="buttons">
+                    <div class="backBtn4">
+                        <i class="uil uil-navigator"></i>
+                        <span class="btnText">Back</span>
+                    </div>
+                    <button class="submit" style="background: green;" onclick="submit()" id="submit">
+                        <span class="btnText">Submit</span>
+                        <i class="uil uil-file-upload"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="{{ url_for('static', filename='tableScript.js') }}"></script>
+   <!-- <script src="{{ url_for('static', filename='buttonScript.js') }}"></script> -->
+</body>
+</html>
 
